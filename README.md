@@ -25,16 +25,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column          | Type   | Options                  |
-| ----------------| ------ | ------------------------ |
-| nickname        | string | null: false              |
-| email           | string | null: false,unique: true |
-| password        | string | null: false              |
-| first-name      | string | null: false              |
-| last-name       | string | null: false              |
-| first-name(カナ) | string | null: false              |
-| last-name(カナ)  | string | null: false              |
-| birth-date      | integer| null: false              |
+| Column              | Type   | Options                  |
+| --------------------| ------ | ------------------------ |
+| nickname            | string | null: false              |
+| email               | string | null: false,unique: true |
+| encrypted_password  | string | null: false            |  
+| first_name          | string | null: false              |
+| last_name           | string | null: false              |
+| first_name_kana     | string | null: false              |
+| last_name_kana      | string | null: false              |
+| birth_date          | date   | null: false              |
 
 ### Association
 
@@ -51,10 +51,10 @@ Things you may want to cover:
 | record_id       | integer| null: false,foreign_key: true |
 | image_url       | string | null: false                   |
 | text            | text   | null: false                   |
-| category        | string | null: false                   |
-| condition       | string | null: false                   |
-| shipping        | integer| null: false                   |
-| day to ship     | integer| null: false                   |
+| category_id     | string | null: false                   |
+| condition_id    | string | null: false                   |
+| shipping_id     | integer| null: false                   |
+| day to ship_id  | integer| null: false                   |
 | price           | integer| null: false                   |
 
 ### Association
@@ -63,19 +63,7 @@ belongs_to :users
 has_one :records
 
 
-## records テーブル
 
-| Column          | Type    | Options                      |
-| ----------------| ------  | ---------------------------- |
-| user_id         | integer | null: false,foreign_key: true|
-| item_id         | integer | null: false,foreign_key: true|
-| purchase_daytime| datetime| null: false                  |
-
-
-### Association
-
-belongs_to :items
-has_one :shipping_address
 
 
 ## shipping_address テーブル
@@ -83,13 +71,12 @@ has_one :shipping_address
 | Column          | Type   | Options                        |
 | ----------------| ------ | ------------------------------ |
 | record_id       | integer| null: false,foreign_key: true  |
-| postal_code     | integer| null: false                    |
+| postal_code     | string| null: false                    |
 | prefectures     | string | null: false                    |
 | municipalities  | string | null: false                    |
 | address         | string | null: false                    |
 | building_name   | string | 　　　　　　　　                 |
-| phone_number    | integer| null: false                    |
+| phone_number    | string | null: false                    |
 
 ### Association
 
-belongs_to :records
