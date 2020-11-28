@@ -48,12 +48,11 @@ Things you may want to cover:
 | Column          | Type   | Options                       |
 | ----------------| ------ | ------------------------------|
 | user_id         | integer| null: false,foreign_key: true |
-| image_url       | string | null: false                   |
 | text            | text   | null: false                   |
 | category_id     | integer| null: false                   |
 | condition_id    | integer| null: false                   |
 | shipping_id     | integer| null: false                   |
-| ship_from_id    | integer| null: false                   |
+| prefecture_id    | integer| null: false                   |
 | day_to_ship_id  | integer| null: false                   |
 | price           | integer| null: false                   |
 
@@ -80,7 +79,7 @@ has_one :shipping_address
 
 
 
-## shipping_address テーブル
+## shipping_addresses テーブル
 
 | Column          | Type   | Options                        |
 | ----------------| ------ | ------------------------------ |
