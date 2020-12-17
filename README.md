@@ -95,3 +95,19 @@ has_one :shipping_address
 ### Association
 
 belongs_to :record
+
+
+
+validates :name, presence: true
+         validates :email,presence: true,uniqueness: true,inclusion: { in: ["@"] }
+         validates :encrypted_password, presence: true,length: { minimum: 6 },format: { with: /\A[a-z0-9]+\z/i } 
+
+
+
+
+validates :nickname, presence: true 
+  validates :birthdate, presence: true    
+  validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥]/ }
+  validates :last_name, format: { with: /\A[ぁ-んァ-ヶ一-龥]/ }
+  validates :first_name_reading, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :last_name_reading, format: { with: /\A[ァ-ヶー－]+\z/ }
