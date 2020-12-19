@@ -12,13 +12,3 @@ validates :first_name_reading, :last_name_reading, format: { with: /\A[ァ-ヶ�
 validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/ }
 
 end
-
-
-
-
-
-
-
-
-
-
