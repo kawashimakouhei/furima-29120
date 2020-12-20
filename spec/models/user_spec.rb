@@ -12,28 +12,18 @@ describe User do
   describe 'ユーザー新規登録' do
     context '新規登録がうまくいくとき' do
       it "nicknameとemail、passwordとpassword_confirmation,first_name,last_name,first_name_reading,last_name_reading,bathdateが存在すれば登録できる" do
-        @user.email = "kk.1989@gmail.com"
-        @user.password = "kk1989"
-        @user.password_confirmation = "kk1989"
         expect(@user).to be_valid
       end
       it "emailに@が含まれれば登録できる" do
-        @user.email = "kk.1989@gmail.com"
         expect(@user).to be_valid
       end
       it "passwordが6文字以上で半角英数字であれば登録できる" do
-        @user.password = "kk19890"
-        @user.password_confirmation = "kk19890"
         expect(@user).to be_valid
       end
       it "first_name,last_nameが全角文字であれば登録できる" do
-        @user.first_name = "康平"
-        @user.last_name = "川島"
         expect(@user).to be_valid
       end
       it "first_name_reading,last_name_readingが全角カナであれば登録できる" do
-        @user.first_name_reading = "コウヘイ"
-        @user.last_name_reading = "カワシマ"
         expect(@user).to be_valid
       end
     end
