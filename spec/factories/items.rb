@@ -8,7 +8,6 @@ FactoryBot.define do
     prefecture_id      { 1 }
     day_to_ship_id     { 1 }
     price              { 2000 }
-    image              {Faker::Lorem.sentence}
     association :user 
   end
 end
