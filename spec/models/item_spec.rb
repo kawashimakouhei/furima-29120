@@ -62,18 +62,43 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Day_to_ship_id can't be blank")
       end
+      it "condition_idが1以外でないと登録できない" do
+        @item.condition_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition_id can't be blank")
+      end
+      it "condition_idが1以外でないと登録できない" do
+        @item.condition_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition_id can't be blank")
+      end
+      it "shipping_idが1以外でないと登録できない" do
+        @item.shipping_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping_id can't be blank")
+      end
+      it "prefecture_idが1以外でないと登録できない" do
+        @item.prefecture_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture_id can't be blank")
+      end
+      it "day_to_ship_id1以外でないと登録できない" do
+        @item.day_to_ship_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Day_to_ship_id can't be blank")
+      end
       it "priceが半角数字でなければ登録できない" do
         @item.price = "値段"
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is invalid")
       end
       it "priceが300以下では登録できない" do
-        @item.price = "10"
+        @item.price = 10
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is invalid")
       end
-      it "priceが99999999以上では登録できない" do
-        @item.price = "9999999999"
+      it "priceが10000000以上では登録できない" do
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is invalid")
       end
