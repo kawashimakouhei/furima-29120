@@ -93,7 +93,7 @@ describe Item do
         expect(@item.errors.full_messages).to include("Price is invalid")
       end
       it "priceが300以下では登録できない" do
-        @item.price = 10
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is invalid")
       end
