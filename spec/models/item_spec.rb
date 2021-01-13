@@ -20,7 +20,7 @@ describe Item do
       it "titleが空だと登録できない" do
         @item.title = ""
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item can't be blank")
+        expect(@item.errors.full_messages).to include("Title can't be blank")
       end
       it "textが空だと登録できない" do
         @item.text = ""
@@ -32,60 +32,56 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
-      it "imageが空だと登録できない" do
-        @item.image = ""
-        @item.valid?
-        expect(@item.errors.full_messages).to include("Image can't be blank")
-      end
+      
       it "category_idが空だと登録できない" do
         @item.category_id = ""
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category_id can't be blank")
+        expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it "condition_idが空だと登録できない" do
         @item.condition_id = ""
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition_id can't be blank")
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it "shipping_idが空だと登録できない" do
         @item.shipping_id = ""
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping_id can't be blank")
+        expect(@item.errors.full_messages).to include("Shipping can't be blank")
       end
       it "prefecture_idが空だと登録できない" do
         @item.prefecture_id = ""
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture_id can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
       it "day_to_ship_idが空だと登録できない" do
         @item.day_to_ship_id = ""
         @item.valid?
-        expect(@item.errors.full_messages).to include("Day_to_ship_id can't be blank")
+        expect(@item.errors.full_messages).to include("Day to ship can't be blank")
       end
       it "condition_idが1以外でないと登録できない" do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition_id can't be blank")
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it "condition_idが1以外でないと登録できない" do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition_id can't be blank")
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it "shipping_idが1以外でないと登録できない" do
         @item.shipping_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping_id can't be blank")
+        expect(@item.errors.full_messages).to include("Shipping can't be blank")
       end
       it "prefecture_idが1以外でないと登録できない" do
         @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture_id can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
       it "day_to_ship_id1以外でないと登録できない" do
         @item.day_to_ship_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Day_to_ship_id can't be blank")
+        expect(@item.errors.full_messages).to include("Day to ship can't be blank")
       end
       it "priceが半角数字でなければ登録できない" do
         @item.price = "値段"
@@ -105,3 +101,5 @@ describe Item do
     end
   end
 end
+
+
