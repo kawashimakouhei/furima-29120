@@ -9,11 +9,15 @@ class Item < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do
-   validates :title, :text, :image, presence: true
+   validates :title
+   validates :text
+   validates :image
+   validates :price
    validates :category_id, :condition_id, :shipping_id, :prefecture_id, :day_to_ship_id, numericality: {other_than: 1, message: "can't be blank"}
    validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is invalid"}
    validates :price, format: { with: /\A[0-9]+\z/ }
   end
   
 end
+
 
