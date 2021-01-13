@@ -11,7 +11,7 @@ describe Item do
 
   describe '商品出品' do
     context '商品出品がうまくいくとき' do
-      it "titleとtext、category_idとcondition_id,shipping_id,prefecture_id,day_to_ship_id,image,priceを正しく入力すれば登録できる" do
+      it "内容に問題がない場合、登録できる" do
         expect(@item).to be_valid
       end
     end
