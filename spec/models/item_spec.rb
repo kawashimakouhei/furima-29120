@@ -27,6 +27,11 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Text can't be blank")
       end
+      it "画像が空だと登録できない" do
+        @item.image = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
+      end
       it "priceが空だと登録できない" do
         @item.price = ""
         @item.valid?
@@ -85,6 +90,16 @@ describe Item do
       end
       it "priceが半角数字でなければ登録できない" do
         @item.price = "値段"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is invalid")
+      end
+      it "priceが半角英数字混合では登録できない" do
+        @item.price = "price10"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is invalid")
+      end
+      it "priceが半角英字では登録できない" do
+        @item.price = "price"
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is invalid")
       end
