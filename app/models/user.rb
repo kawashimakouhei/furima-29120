@@ -11,4 +11,6 @@ validates :first_name, :last_name, format: { with: /\A[ぁ-んァ-ヶ一-龥]/ }
 validates :first_name_reading, :last_name_reading, format: { with: /\A[ァ-ヶー－]+\z/ }
 validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/ }
 
+has_many :items
+
 end
