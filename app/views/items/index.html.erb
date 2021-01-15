@@ -123,7 +123,7 @@
   <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
-    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <%= link_to '新規投稿商品', "new_item_path", class: "subtitle" %>
     <ul class='item-lists'>
     <% @items.each do |item| %>
 
@@ -145,13 +145,18 @@
             <%= item.title %>
           </h3>
           <div class='item-price'>
+<<<<<<< Updated upstream
             <span><%= item.price %>円<br><%= item.shipping.name %></span>
+=======
+            <span><%= item.price %>円<br><%= item.shipping_id.name %></span>
+>>>>>>> Stashed changes
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
             </div>
           </div>
         </div>
+        <% end %>
         <% end %>
       </li>
       <% end %>
