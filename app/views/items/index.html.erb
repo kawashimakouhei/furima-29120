@@ -145,7 +145,6 @@
             <%= item.title %>
           </h3>
           <div class='item-price'>
-          
             <span><%= item.price %>円<br><%= item.shipping.name %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
@@ -153,7 +152,7 @@
             </div>
           </div>
         </div>
-        <% end %>
+
         <% end %>
       </li>
       <% end %>
@@ -189,5 +188,6 @@
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
 <%= render "shared/footer" %>
+
 
 
