@@ -45,10 +45,11 @@ class ItemsController < ApplicationController
       render :show
     end
   else
-    edirect_to root_path
+    redirect_to root_path
   end
 
 
+  
 
   end
 
