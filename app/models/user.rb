@@ -13,6 +13,6 @@ validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/ }
 
 has_many :items
 has_one :order
-has_one :Address
+has_one :address
 
 end

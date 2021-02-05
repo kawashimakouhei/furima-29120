@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   has_one :order
-  has_one :Address
+  has_one :address
 
   with_options presence: true do
    validates :title
