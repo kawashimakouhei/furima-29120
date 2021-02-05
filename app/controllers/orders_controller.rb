@@ -1,5 +1,13 @@
 class OrdersController < ApplicationController
   def index
+    unless user_signed_in?
+      redirect_to user_session_path
+      return
+    end
+
+    if Item.find(params[:item_id]).user.id == current_user.id
+      redirect_to root_path
+    end
     @user_order = UserOrder.new  
   end
 
@@ -16,7 +24,7 @@ class OrdersController < ApplicationController
         currency: 'jpy'                 
       )
        @user_order.save
-       redirect_to action: :index
+       redirect_to root_path
      else
        render action: :index
      end
